@@ -1,0 +1,37 @@
+
+
+<html><link rel = "stylesheet" href="{{url_for('static',filename='light.css')}}">
+  <head>
+    <meta
+      name="viewport"
+      content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"
+    />
+  </head>
+  <script>
+    let modNo = 0;
+    let changeMod = (color, mod) => {
+      if (color > 0) color = 0;
+      else color += mod;
+      console.log(color);
+      return color;
+    };
+  </script>
+
+  <body>
+    <form action="/light" method="post">
+      RED :
+      <input type="radio" name="Red" value="on" />ON
+      <input type="radio" name="Red" value="off" checked="checked" />OFF
+      <br />
+      GREEN :
+      <input type="radio" name="Green" value="on" />ON
+      <input type="radio" name="Green" value="off" checked="checked" />OFF
+      <br />
+      BLUE :
+      <input type="radio" name="Blue" value="on" />ON
+      <input type="radio" name="Blue" value="off" checked="checked" />OFF
+      <br />
+      <input type="submit" value="On" />
+    </form>
+  </body>
+</html>
